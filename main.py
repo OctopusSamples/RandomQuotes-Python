@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, send_from_directory
 from random import randint
 from os import getenv
 
@@ -17,6 +17,11 @@ def index():
         "\"appVersion\": \"1.0.0\", " \
         "\"environmentName\": \"" + getenv('ENVIRONMENT_NAME', 'Local') + "\" " \
         "}"
+
+
+@app.route('/<path:path>')
+def send_js(path):
+    return send_from_directory('public', path)
 
 
 if __name__ == "__main__":
