@@ -9,7 +9,7 @@ app = Flask(__name__)
 def index():
     with open('quotes.txt') as f:
         quotes = [line.rstrip() for line in f]
-    with open('authors.txt.txt') as f:
+    with open('authors.txt') as f:
         authors = [line.rstrip() for line in f]
     random_index = randint(0, len(quotes))
     return "{\"quote\": \"" + quotes[random_index] + "\", " \
@@ -17,3 +17,7 @@ def index():
         "\"appVersion\": \"1.0.0\", " \
         "\"environmentName\": \"" + getenv('ENVIRONMENT_NAME', 'Local') + "\" " \
         "}"
+
+
+if __name__ == "__main__":
+    app.run(host="127.0.0.1", port=8080, debug=True)
