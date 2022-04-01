@@ -57,14 +57,14 @@ jobs:
 #     - name: Test
 #       run: pip install pytest; pytest --junitxml=results.xml
 #       shell: bash
-    - if: always()
-      name: Report
-      uses: dorny/test-reporter@v1
-      with:
-        name: Python Tests
-        path: results.xml
-        reporter: java-junit
-        fail-on-error: 'false'
+#     - if: always()
+#       name: Report
+#       uses: dorny/test-reporter@v1
+#       with:
+#         name: Python Tests
+#         path: results.xml
+#         reporter: java-junit
+#         fail-on-error: 'false'
     - name: Package
       run: |-
         SOURCEPATH=.
