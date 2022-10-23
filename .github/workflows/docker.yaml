@@ -10,7 +10,7 @@
 # match your Octopus projects and environments.
 #
 # Get a trial Octopus instance from https://octopus.com/start
-name: Python Build
+name: Docker Build
 'on':
   workflow_dispatch: {}
   push: {}
