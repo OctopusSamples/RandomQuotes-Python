@@ -89,4 +89,4 @@ jobs:
         project: RandomQuotes-Python
         server: ${{ secrets.OCTOPUS_SERVER_URL }}
         deploy_to: Dev
-        packages: RandomQuotes-Python:${{ steps.determine_version.outputs.semVer }}
+        packages: Deploy container to Kubernetes:randomquotes:${{ steps.determine_version.outputs.semVer }}
