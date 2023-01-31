@@ -81,7 +81,7 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: octopussamples/randomquotespython:latest
+        tags: octopussamples/randomquotespython:${{ steps.determine_version.outputs.semVer }}
     - name: Create Octopus Release
       uses: OctopusDeploy/create-release-action@v1.1.1
       with:
@@ -89,4 +89,4 @@ jobs:
         project: RandomQuotes-Python
         server: ${{ secrets.OCTOPUS_SERVER_URL }}
         deploy_to: Dev
-        packages: RandomQuotes-Python:${{ steps.determine_version.outputs.semVer }}
+        packages: Deploy container to Kubernetes:randomquotes:${{ steps.determine_version.outputs.semVer }}
